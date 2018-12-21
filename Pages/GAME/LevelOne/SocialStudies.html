@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wisdom Warriors - Level 1</title>
+	<link rel="icon" type="image/x-icon" href="../../../Assets/favicon.ico" />
+	<script type="text/javascript" src="../game.js"></script>
+	<link rel="stylesheet" type="text/css" href="../GameStyle.css"/>
+
+	<style type="text/css">
+		body {
+			overflow-x: hidden;
+			overflow-y: hidden;
+		}
+	</style>
+</head>
+<body onload = "LOneSocStudiesStart()">
+
+<style type="text/css">
+	body {
+			background-image: url('../../../Assets/Castle/BrickWall.png');
+			background-size: 60vw;
+			background-repeat: repeat;
+			background-position: 0% 0%;
+		}
+
+		#torchOne {
+			position: absolute;
+			margin-top: 20vh;
+			margin-left: 23vw;
+		}
+		#torchTwo {
+			position: absolute;
+			margin-top: 20vh;
+			margin-left: 62vw;
+		}
+		#podium {
+			position: absolute;
+			display: block;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin-left: auto;
+			margin-right: auto;
+			
+		
+		}
+		#character {
+	height: 100vh;
+	position: absolute;
+	margin-top: 6vh;
+}
+#merlin {
+	height: 100vh;
+	position: absolute;
+	margin-top: 4vh;
+	margin-left: 70vw;
+}
+</style>
+<div id="torchesMove"/>
+<img src="../../../Assets/Castle/Torch.gif" height ="200vh" id = "torchOne"/>
+	<img src="../../../Assets/Castle/Torch2.gif" height ="200vh" id = "torchTwo"/>
+	</div>
+	<img src="../../../Assets/Castle/Podium.png" width="200vw" id="podium"/>
+	<img src="" id="character" id="character"/>
+	<img src="../../../Assets/Characters/Single/MerlinBlinking.gif" id="merlin"/>
+
+<style type="text/css">
+	#torchesMove {
+		position: absolute;
+		width: 100vw;
+		height: 100vw;
+		margin-left: 0vw;
+	}
+</style>
+	<div id="hiddenForInvis">
+	<div class="textBox" id="darkerblue"></div>
+	<div class="textBox" id="lighterblue"></div>
+	</div>
+
+	<img id="speakerCircle" src="../../../Assets/LOGO2.png"/>
+
+
+	<div id="texttextBox"><h1 id="textArea"></h1></div>
+
+	<img id="popup" src="../../../Assets/popup.png" class="fadingElement"/>
+
+<style type="text/css">
+	#hiddenForInvis {
+			opacity: 0;
+		}
+
+		.textBox {
+			position: absolute;
+			width: 110vw;
+			margin-right: -3vw;
+			margin-left: -3vw;
+			
+		}
+		#darkerblue {
+			background-color: #0B6E9E;
+			height: 2vh;
+			bottom: 0;
+			margin-bottom: 25vh;
+		}
+		#lighterblue {
+			background-color: #148ABC;
+			height: 25vh;
+			bottom: 0;
+		}
+		#speakerCircle {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			margin-bottom: 1.5vh;
+			margin-left: 4vw;
+			height: 22vh;
+			opacity: 0;
+		}
+		#texttextBox {
+			color: #FFF;
+			width: 75vw;
+			position: absolute;
+			bottom: 0;
+			margin-bottom: 5vh;
+			height: 15vh;
+			right: 0;
+			margin-right: 5vw;
+			display:table;
+		}
+		#textArea {
+			 display:table-cell;
+        vertical-align:middle;
+        opacity: 0;
+
+		}
+
+		h1 {
+			font-size: 3em;
+		}
+
+		table {
+			opacity: 0;
+		}
+		td {
+			text-align: center;
+		}
+		.myImage {
+			width: 20vw;
+		}
+		body {
+			background-color: #000;
+		}
+		#popup {
+			opacity: 0;
+			position: absolute;
+			z-index: 89;
+			top: 0;
+			height: 70vh;
+			left: 0;
+			right: 0;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		#myTable {
+			top:0;
+			margin-top: 18vh;
+			position: absolute;
+			width: 30vw;
+			z-index: 90;
+			left: 0;
+			right: 0;
+			margin-left: auto;
+			margin-right: auto;
+			padding-right: 10vw;
+		}
+		#osiPointingArrow {
+			opacity: 0;
+			position: absolute;
+			width: 5vw;
+			bottom: 0;
+			right: 0;
+			margin-bottom: 8vh;
+			margin-right: 3vw;
+
+		}
+</style>
+
+<div id="rightSideTap"></div>
+<!--<img src="../../../Assets/Castle/Torch.gif" height ="240vh" id = "torchPassOne"/>
+<img src="../../../Assets/Castle/Torch.gif" height ="240vh" id = "torchPassTwo"/>
+<img src="../../../Assets/Castle/Torch.gif" height ="240vh" id = "torchPassThree"/>
+<img src="../../../Assets/Castle/Torch.gif" height ="240vh" id = "torchPassFour"/>
+<img src="../../../Assets/Castle/Torch.gif" height ="240vh" id = "torchPassFive"/>
+<img src="../../../Assets/Castle/Torch.gif" height ="240vh" id = "torchPassSix"/>
+<img src="../../../Assets/Castle/Torch.gif" height ="240vh" id = "torchPassSeven"/>
+<img src="../../../Assets/Castle/Torch.gif" height ="240vh" id = "torchPassEight"/>
+<img src="../../../Assets/Castle/Torch.gif" height ="240vh" id = "torchPassNine"/>
+<img src="../../../Assets/Castle/Torch.gif" height ="240vh" id = "torchPassTen"/>
+
+<img src="../../../Assets/L1 Math/FullDoor.png" id="hallwayDoorOne"/>
+<img src="../../../Assets/L1 Math/FullDoor.png" id="hallwayDoorTwo"/>
+<img src="../../../Assets/L1 Math/FullDoor.png" id="hallwayDoorThree"/>
+<img src="../../../Assets/L1 Math/FullDoor.png" id="hallwayDoorFour"/>-->
+
+<style type="text/css">
+	#rightSideTap {
+		position: absolute;
+		width: 50vw;
+		height: 110vh;
+		left: 50%;
+		margin-top: -3vh;
+	}
+	#torchPassOne {
+		position: absolute;
+			left: 150%;
+			margin-top: 20vh;
+			height: 24vh;
+	}
+	#torchPassTwo {
+		position: absolute;
+			left: 250%;
+			margin-top: 20vh;
+			height: 24vh;
+	}
+	#torchPassThree {
+		position: absolute;
+			left: 350%;
+			margin-top: 20vh;
+			height: 24vh;
+	}
+	#torchPassFour {
+		position: absolute;
+			left: 450%;
+			margin-top: 20vh;
+			height: 24vh;
+	}
+	#torchPassFive {
+		position: absolute;
+			left: 550%;
+			margin-top: 20vh;
+			height: 24vh;
+	}
+	#torchPassSix {
+		position: absolute;
+			left: 650%;
+			margin-top: 20vh;
+			height: 24vh;
+	}
+	#torchPassSeven {
+		position: absolute;
+			left: 750%;
+			margin-top: 20vh;
+			height: 24vh;
+	}
+	#torchPassEight {
+		position: absolute;
+			left: 850%;
+			margin-top: 20vh;
+			height: 24vh;
+	}
+	#torchPassNine {
+		position: absolute;
+			left: 950%;
+			margin-top: 20vh;
+			height: 24vh;
+	}
+	#torchPassTen {
+		position: absolute;
+			left: 1050%;
+			margin-top: 20vh;
+			height: 24vh;
+	}
+
+
+	#hallwayDoorOne {
+		position: absolute;
+			height: 105vh;
+			bottom: 0;
+			margin-bottom: -1vh;
+			left: 275%;
+	}
+	#hallwayDoorTwo {
+		position: absolute;
+			height: 105vh;
+			bottom: 0;
+			margin-bottom: -1vh;
+			left: 475%;
+	}
+	#hallwayDoorThree {
+		position: absolute;
+			height: 105vh;
+			bottom: 0;
+			margin-bottom: -1vh;
+			left: 675%;
+	}
+	#hallwayDoorFour {
+		position: absolute;
+			height: 105vh;
+			bottom: 0;
+			margin-bottom: -1vh;
+			left: 875%;
+	}
+</style>
+
+	
+</body>
+</html>

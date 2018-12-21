@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wisdom Warriors - Start</title>
+	<link rel="icon" type="image/x-icon" href="../../Assets/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="../../styles.css"/>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+$(window).load(function() {
+
+	$("#loader").fadeOut(6000);
+})
+</script>
+
+</head>
+<body>
+
+<div id="loader">
+	<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	<div class="flipper">
+		<div class="front">
+			<img src="../../Assets/LOGO2.png" id="centered"/>
+		</div>
+		<div class="back">
+			<img src="../../Assets/LOGO2.png" id="centered"/>
+		</div>
+	</div>
+</div>
+</div>
+
+<a href="name.html"><div id="castleselectdiv"></div></a>
+	<img src="../../Assets/TITLEFORESTFULL.png" id="titletitle"/>
+	
+	<img src="../../Assets/clickToSTART.png" id="titletitleTwo"/>
+
+	<a href="menu.html"><img src="../../Assets/ARROWCOIN.png" id="arrowcoinone" class="centered-x-axis"/></a>
+
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var img = document.getElementById('titletitleTwo');
+
+			var interval = window.setInterval(function(){
+    			if(img.style.visibility == 'hidden'){
+        			img.style.visibility = 'visible';
+    			}else{
+        			img.style.visibility = 'hidden';
+    				}
+				}, 1000); //the 1000 here is milliseconds and determines how often the interval should be run.
+			});
+</script>
+<style type="text/css">
+	@keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 1000% 0; }
+}
+body { 
+
+  background-image: url(../../Assets/Clouds.png);
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+
+  animation: animatedBackground 400s linear infinite;
+}
+
+#castleselectdiv {
+	background-color: rgba(250,0,0,0);
+	width: 32vw;
+	height: 58vh;
+	position: absolute;
+	margin-top: 25vh;
+	margin-left: 43.5vw;
+}
+
+#loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+}
+
+#loader {
+background: linear-gradient(270deg, #148abc, #980ecc, #cf0000, #4ea647, #e35700, #f8cb40, #db386b, #1d619a, #0da078);
+
+	background-size: 2000%, 2000%;
+
+-webkit-animation: AnimationName 120s ease infinite;
+-moz-animation: AnimationName 120s ease infinite;
+animation: AnimationName 120s ease infinite;
+}
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 92%}
+    50%{background-position:100% 9%}
+    100%{background-position:0% 92%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 92%}
+    50%{background-position:100% 9%}
+    100%{background-position:0% 92%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 92%}
+    50%{background-position:100% 9%}
+    100%{background-position:0% 92%}
+}
+
+/* entire container, keeps perspective */
+
+.flip-container {
+	perspective: 1000px;
+	margin: auto;
+}
+	/* flip the pane when hovered */
+
+	.flip-container .flipper, .flip-container.hover .flipper {
+		animation: continuous-flippy 15s;
+		animation-iteration-count: infinite;
+	}
+
+	@keyframes continuous-flippy {
+
+		0% {
+			transform: rotateY(180deg);
+			animation-duration: 1s;	
+		}
+		50% {
+			transform: rotateY(180deg);
+			animation-duration: 1s;
+		}
+	}
+
+
+.flip-container, .front, .back {
+	width: 50vw;
+	height: 90vh;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+
+#centered {
+	display: block;
+	width: 30vw;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+  top: 15%;
+  transform: translateY(15%);
+}
+
+
+</style>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wisdom Warriors - Menu</title>
+	<link rel="icon" type="image/x-icon" href="../../Assets/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="../../styles.css"/>
+
+	<script type="text/javascript" src="game.js"></script>
+
+</head>
+<body onload="goToMenu()">
+	<img src="../../Assets/TITLEFOREST-EXP.png" id="titletitletitle"/>
+	<img src="../../Assets/ARROWCOIN.png" id="arrowcoinoneone" class="centered-x-axis" onclick="backButtonDoes()" />
+
+
+<img src="../../Assets/MenuMain.png" id="MenuMain"/>
+<table id="clickTable">
+<tr>
+	<td id="tdOne">
+	</td>
+</tr>
+<tr>
+	<td id="tdTwo">
+	</td>
+</tr>
+<tr>
+	<td id="tdThree">
+	</td>
+</tr>
+<tr>
+	<td id="tdFour">
+	</td>
+</tr>
+</table>
+
+<form id="passwordForm">
+	<input type="password" name="password" id="devPassword" placeholder="PASSWORD" />
+</form>
+<img src="../../Assets/EnterButton.png" id="enterButton"/>
+<img src="../../Assets/ResetButton.png" id="reset"/>
+
+<a download="ProgressReport.txt" id="downloadlink" style="display: none" target="_blank" style="target-new: tab;"><img src="../../Assets/DownloadProgressReport.png" id ="download"/></a>
+
+<!--<form id="speedSliderForm">
+<input type="range" name="speedSlider" id="speedSlider"/>
+</form>-->
+
+
+<!--<img src="../GAMES/planets.gif" width="145" height="126" alt="Planets" usemap="#planetmap" id="testtesttest">
+
+<map name="planetmap">
+  <area shape="rect" coords="0,0,82,126" href="sun.htm" alt="Sun">
+  <area shape="circle" coords="90,58,3" href="mercur.htm" alt="Mercury">
+  <area shape="circle" coords="124,58,8" href="venus.htm" alt="Venus">
+</map>-->
+
+
+<style type="text/css">
+
+@font-face {
+    font-family: 'WisdomFont';
+    src: url('warriortype-webfont.woff2') format('woff2'),
+         url('warriortype-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+	/*@keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 1000% 0; }
+}*/
+body { 
+
+  background-image: url(../../Assets/Clouds.png);
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+
+  animation: animatedBackground 400s linear infinite;
+}
+
+#MenuMain {
+	position: absolute;
+	width: 43vw;
+
+	display: block;
+	left:0;
+  right:0;
+  top:0;
+  margin:auto;
+
+}
+
+#clickTable {
+	
+	position: absolute;
+	width: 35vw;
+	display: block;
+	left: 0;
+	right: 0;
+	top: 0;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 24vh;
+	z-index: 50;
+
+}
+td {
+	width: 34.5vw;
+	height: 15vh;
+	display: block;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0.5vh;
+	margin-bottom: 0.5vh;
+}
+#tdOne {
+}
+#tdTwo {
+}
+#tdThree {
+}
+#tdFour {
+	
+}
+#passwordForm {
+	opacity: 0;
+	position: absolute;
+	width: 20vw;
+	left: 50%;
+	margin-left: -10.5vw;
+	top: 0;
+	margin-top: 70vh;
+	z-index: -1;
+}
+input {
+	width: 20vw;
+	text-align: center;
+	font-size: 5vh;
+	border: 0.5vw solid #148ABC;
+font-family: WisdomFont;
+  color: #148ABC;
+}
+#enterButton {
+	opacity: 0;
+	width: 10vw;
+	position: absolute;
+	left: 50%;
+	margin-left: -5vw;
+	top: 0;
+	margin-top: 80vh;
+	z-index: -1;
+}
+#reset {
+	opacity: 0;
+	width: 20vw;
+	position: absolute;
+	left: 50%;
+	margin-left: -10vw;
+	top: 0;
+	margin-top: 70vh;
+	z-index: -1;
+}
+#download {
+	opacity: 0;
+	width: 20vw;
+	position: absolute;
+	left: 50%;
+	margin-left: -10vw;
+	top: 0;
+	margin-top: 70vh;
+	z-index: -1;
+}
+#speedSlider {
+	width: 15vw;
+}
+#speedSliderForm {
+	left: 50%;
+	margin-left: -8vw;
+	width: 8vw;
+	position: absolute;
+	top: 0;
+	margin-top: 55vh;
+}
+
+</style>
+</body>
+</html>

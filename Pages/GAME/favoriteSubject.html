@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wisdom Warriors - What Is Your Favorite Subject?</title>
+	<link rel="icon" type="image/x-icon" href="../../Assets/favicon.ico" />
+	<script type="text/javascript" src="game.js"></script>
+
+	<style type="text/css">
+		body {
+			overflow-x: hidden;
+			overflow-y: hidden;
+		}
+	</style>
+</head>
+<body onload ="favoriteSubjectFunc()">
+
+<img src="../../Assets/favoriteSubject.png" id="favoriteSubject"/>
+	<table>
+		<tr>
+			<td>
+				<img src="../../Assets/Coins/MathCoin.png" id="mathCoinCoin" class="coin" id="leftpaddingone" onclick="definefavorite(1)" />
+			</td>
+			<td>
+				<img src="../../Assets/Coins/ScienceCoin.png" id="scienceCoinCoin" class="coin" class="rightpadding" onclick="definefavorite(2)" />
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<img src="../../Assets/Coins/SocialStudiesCoin.png" id="socCoinCoin" class="coin" id="leftpaddingtwo" onclick="definefavorite(3)" />
+			</td>
+			<td>
+				<img src="../../Assets/Coins/LanguageArtsCoin.png" id="langCoinCoin" class="coin" class="rightpadding" onclick="definefavorite(4)"/>
+			</td>
+		</tr>
+	</table>
+<style type="text/css">
+		body {
+
+	background: linear-gradient(270deg, #148abc, #980ecc, #cf0000, #4ea647, #e35700, #f8cb40, #db386b, #1d619a, #0da078);
+
+	background-size: 2000%, 2000%;
+
+-webkit-animation: AnimationName 120s ease infinite;
+-moz-animation: AnimationName 120s ease infinite;
+animation: AnimationName 120s ease infinite;
+}
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 92%}
+    50%{background-position:100% 9%}
+    100%{background-position:0% 92%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 92%}
+    50%{background-position:100% 9%}
+    100%{background-position:0% 92%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 92%}
+    50%{background-position:100% 9%}
+    100%{background-position:0% 92%}
+}
+
+.coin {
+	height: 40vh;
+}
+table {
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 4vh;
+}
+.leftpaddingoneone {
+	padding-right: 5vw;
+	height: 40vh;
+}	
+.rightpaddingoneone {
+	padding-left: 5vw;
+	height: 40vh;
+}
+.leftpaddingtwoone {
+	padding-right: 5vw;
+	height: 40vh;
+}
+.rightpaddingtwoone {
+	padding-left: 5vw;
+	height: 40vh;
+}
+
+#favoriteSubject {
+	width: 80vw;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+</style>
+
+
+</body>
+</html>

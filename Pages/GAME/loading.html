@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wisdom Warriors - Loading</title>
+	<style type="text/css">
+		body {
+			background-color: #148ABC;
+		}
+	</style>
+</head>
+<body>
+	<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	<div class="flipper">
+		<div class="front">
+			<img src="../../Assets/LOGO2.png" id="centered"/>
+		</div>
+		<div class="back">
+			<img src="../../Assets/LOGO2.png" id="centered"/>
+		</div>
+	</div>
+</div>
+<img src="../../Assets/Loading.png" id="loadingimage"/>
+	
+
+	<style type="text/css">
+		body {
+
+	background: linear-gradient(270deg, #148abc, #980ecc, #cf0000, #4ea647, #e35700, #f8cb40, #db386b, #1d619a, #0da078);
+
+	background-size: 2000%, 2000%;
+
+-webkit-animation: AnimationName 120s ease infinite;
+-moz-animation: AnimationName 120s ease infinite;
+animation: AnimationName 120s ease infinite;
+}
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 92%}
+    50%{background-position:100% 9%}
+    100%{background-position:0% 92%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 92%}
+    50%{background-position:100% 9%}
+    100%{background-position:0% 92%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 92%}
+    50%{background-position:100% 9%}
+    100%{background-position:0% 92%}
+}
+
+
+
+/* entire container, keeps perspective */
+
+.flip-container {
+	perspective: 1000px;
+	margin: auto;
+}
+	/* flip the pane when hovered */
+
+	.flip-container .flipper, .flip-container.hover .flipper {
+		animation: continuous-flippy 15s;
+		animation-iteration-count: infinite;
+	}
+
+	@keyframes continuous-flippy {
+
+		0% {
+			transform: rotateY(180deg);
+			animation-duration: 1s;	
+		}
+		50% {
+			transform: rotateY(180deg);
+			animation-duration: 1s;
+		}
+	}
+
+
+.flip-container, .front, .back {
+	width: 50vw;
+	height: 90vh;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+
+#centered {
+	display: block;
+	width: 30vw;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+  top: 15%;
+  transform: translateY(15%);
+}
+
+#loadingimage {
+	display: block;
+	width: 40vw;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	top: 0%;
+	transform: translateY(-50%);
+}
+
+	</style>
+</body>
+</html>

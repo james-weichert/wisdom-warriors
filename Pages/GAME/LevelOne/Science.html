@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wisdom Warriors - Level 1</title>
+	<link rel="icon" type="image/x-icon" href="../../../Assets/favicon.ico" />
+	<script type="text/javascript" src="../game.js"></script>
+	<link rel="stylesheet" type="text/css" href="../GameStyle.css"/>
+
+	<style type="text/css">
+		body {
+			overflow-x: hidden;
+			overflow-y: hidden;
+
+		}
+	</style>
+</head>
+<body onload="LOneScienceStart()">
+
+<img src="../../../Assets/L1 Math/FullDoor.png" id="door"/>
+<img src="../../../Assets/Castle/Torch.gif" height ="200vh" id = "torchOne"/>
+<img src="../../../Assets/Castle/Torch2.gif" height ="200vh" id = "torchTwo"/>
+<img src="" id="character" id="character"/>
+
+<style type="text/css">
+	body {
+			background-image: url('../../../Assets/Castle/BrickWall.png');
+			background-size: 60vw;
+			background-repeat: repeat;
+		}
+		#door {
+			position: absolute;
+			height: 105vh;
+			bottom: 0;
+			margin-bottom: -1vh;
+			left: 0;
+			margin-left: -25vw;
+
+
+		}
+		#torchOne {
+			position: absolute;
+			z-index: -4;
+			top: 0;
+			margin-top: 20vh;
+			left: 0;
+			margin-left: 20vw;
+		}
+		#torchTwo {
+			position: absolute;
+			z-index: -4;
+			top: 0;
+			margin-top: 20vh;
+			right: 0;
+			margin-right: 10vw;
+		}
+		#character {
+	height: 100vh;
+	position: absolute;
+	margin-top: 6vh;
+	left: 0;
+	margin-left: 0.5vw;
+}
+
+</style>
+
+
+<img id="layoutHint" src="../../../Assets/L1 Science/InventionFull.png"/>
+
+<!--<img id="cage" src="../../../Assets/L1 Science/Cage.png"/>
+<img id="counterWeight" src="../../../Assets/L1 Science/CounterWeight.png"/>
+<img id="plank" src="../../../Assets/L1 Science/Plank.png"/>
+<img id="pivot" src="../../../Assets/L1 Science/pivot.png"/>
+<img id="beam" src="../../../Assets/L1 Science/Beam.png"/>
+<img id="tripWire" src="../../../Assets/L1 Science/tripWire.png"/>
+<img id="wire" src="../../../Assets/L1 Science/Wire.png"/>-->
+
+
+<div id="counterWeightDiv" class="trapDivs" ondrop="dropDifferentScience(event, 2)" ondragover="allowDropScience(event)">
+</div>
+<div id="pivotDiv" class="trapDivs" ondrop="dropDifferentScience(event, 4)" ondragover="allowDropScience(event)">
+</div>
+<div id="beamDiv" class="trapDivs" ondrop="dropDifferentScience(event, 5)" ondragover="allowDropScience(event)">	
+</div>
+<div id="tripWireDiv" class="trapDivs" ondrop="dropDifferentScience(event, 6)" ondragover="allowDropScience(event)">
+</div>
+<div id="cageDiv" class="trapDivs" ondrop="dropDifferentScience(event, 1)" ondragover="allowDropScience(event)">
+</div>
+<div id="plankDiv" class="trapDivs" ondrop="dropDifferentScience(event, 3)" ondragover="allowDropScience(event)">
+</div>
+
+
+
+
+
+
+
+
+<div id="cageDivOriginal" class="trapDivsOriginal" ondrop="dropScience(event, 1)" ondragover="allowDropScience(event)">
+	<img id="cageTwoOriginal" src="../../../Assets/L1 Science/Cage.png" draggable="true" ondragstart="dragScience(event)"/>
+</div>
+<div id="plankDivOriginal" class="trapDivsOriginal" ondrop="dropScience(event, 3)" ondragover="allowDropScience(event)">
+	<img id="plankTwoOriginal" src="../../../Assets/L1 Science/Plank.png" draggable="true" ondragstart="dragScience(event)"/>
+</div>
+<div id="pivotDivOriginal" class="trapDivsOriginal" ondrop="dropScience(event, 4)" ondragover="allowDropScience(event)">
+	<img id="pivotTwoOriginal" src="../../../Assets/L1 Science/pivot.png" draggable="true" ondragstart="dragScience(event)"/>
+</div>
+<div id="beamDivOriginal" class="trapDivsOriginal" ondrop="dropScience(event, 5)" ondragover="allowDropScience(event)">
+	<img id="beamTwoOriginal" src="../../../Assets/L1 Science/Beam.png" draggable="true" ondragstart="dragScience(event)"/>	
+</div>
+<div id="tripWireDivOriginal" class="trapDivsOriginal" ondrop="dropScience(event, 6)" ondragover="allowDropScience(event)">
+	<img id="tripWireTwoOriginal" src="../../../Assets/L1 Science/tripWire.png" draggable="true" ondragstart="dragScience(event)"/>
+</div>
+<div id="counterWeightDivOriginal" class="trapDivsOriginal" ondrop="dropScience(event, 2)" ondragover="allowDropScience(event)">
+	<img id="counterWeightTwoOriginal" src="../../../Assets/L1 Science/CounterWeight.png" draggable="true" ondragstart="dragScience(event)"/>
+</div>
+
+<style type="text/css">
+	#layoutHint {
+		opacity: 0;
+		position: absolute;
+		height: 110vh;
+		margin-top: -10vh;
+		right: 0;
+		margin-right: -3vw;
+		z-index: -3;
+	}
+	#cage {
+		z-index: 51;
+		position: absolute;
+		width: 16.75vw;
+		left: 0;
+		margin-left: 57.2vw;
+		top: 0;
+		margin-top: -43vh;
+	}
+	#counterWeight {
+		z-index: 51;
+		position: absolute;
+		width: 12vw;
+		left: 0;
+		margin-left: 28vw;
+		top: 0;
+		margin-top: 26vh;
+	}
+	#plank {
+		z-index: 52;
+		position: absolute;
+		width: 41.5vw;
+		left: 0;
+		margin-left: 27.5vw;
+		top: 0;
+		margin-top: 48.8vh;
+	}
+	#pivot {
+		z-index: 50;
+		position: absolute;
+		width: 14vw;
+		left: 0;
+		margin-left: 35vw;
+		top: 0;
+		margin-top: 56vh;
+	}
+	#beam {
+		z-index: 50;
+		position: absolute;
+		width: 7.8vw;
+		left: 0;
+		margin-left: 49.75vw;
+		top: 0;
+		margin-top: 56vh;
+	}
+	#tripWire {
+		z-index: 50;
+		position: absolute;
+		width: 39vw;
+		left: 0;
+		margin-left: 63vw;
+		top: 0;
+		margin-top: 86.2vh;
+	}
+	#wire {
+		z-index: 51;
+		position: absolute;
+		width: 5.4vw;
+		left: 0;
+		margin-left: 57.55vw;
+		top: 0;
+		margin-top: 88.5vh;
+	}
+
+	/*-------*/
+
+	#cageTwo {
+		z-index: 11;
+		width: 16.75vw;
+		vertical-align: middle;
+	}
+	#counterWeightTwo {
+		z-index: 11;
+		width: 12vw;
+		vertical-align: middle;
+	}
+	#plankTwo {
+		z-index: 12;
+		width: 41.5vw;
+		vertical-align: middle;
+	}
+	#pivotTwo {
+		z-index: 10;
+		width: 14vw;
+		vertical-align: middle;
+	}
+	#beamTwo {
+		z-index: 10;
+		width: 7.8vw;
+		vertical-align: middle;
+	}
+	#tripWireTwo {
+		z-index: 10;
+		width: 44.4vw;
+		vertical-align: middle;
+	}
+	#wireTwo {
+		z-index: 11;
+		width: 5.4vw;
+		vertical-align: middle;
+	}
+
+	/*---------*/
+
+	.trapDivs {
+	text-align: center;
+	line-height: 1vh;
+	}
+
+	#cageDiv {
+		position: absolute;
+		left: 0;
+		margin-left: 57.2vw;
+		bottom: 0;
+		margin-bottom: 50vh;
+		width: 16.75vw;
+		height: 70.24vw;
+
+	}
+	#counterWeightDiv {
+		position: absolute;
+		left: 0;
+		margin-left: 28vw;
+		top: 0;
+		margin-top: 26vh;
+		width: 12vw;
+		height: 12vw;
+	}
+	#plankDiv {
+		z-index: 13;
+		position: absolute;
+		left: 0;
+		margin-left: 27.5vw;
+		top: 0;
+		margin-top: 48.8vh;
+		width: 41.5vw;
+		height: 4.15vw;
+	}
+	#pivotDiv {
+		position: absolute;
+		left: 0;
+		margin-left: 35vw;
+		top: 0;
+		margin-top: 56vh;
+		width: 14vw;
+		height: 23.3333334vw;
+	}
+	#beamDiv {
+		position: absolute;
+		left: 0;
+		margin-left: 49.75vw;
+		top: 0;
+		margin-top: 56vh;
+		width: 7.8vw;
+		height: 23.4vw;
+	}
+	#tripWireDiv {
+		position: absolute;
+		left: 0;
+		margin-left: 57.55vw;
+		top: 0;
+		margin-top: 86.2vh;
+		width: 44.4vw;
+		height: 7.8vw;
+	}
+
+
+
+
+
+
+
+
+	/*-------*/
+
+	#cageTwoOriginal {
+		z-index: 11;
+		width: 16.75vw;
+		vertical-align: middle;
+	}
+	#counterWeightTwoOriginal {
+		z-index: 11;
+		width: 12vw;
+		vertical-align: middle;
+	}
+	#plankTwoOriginal {
+		z-index: 12;
+		width: 41.5vw;
+		vertical-align: middle;
+	}
+	#pivotTwoOriginal {
+		z-index: 10;
+		width: 14vw;
+		vertical-align: middle;
+	}
+	#beamTwoOriginal {
+		z-index: 10;
+		width: 7.8vw;
+		vertical-align: middle;
+	}
+	#tripWireTwoOriginal {
+		z-index: 10;
+		width: 44.4vw;
+		vertical-align: middle;
+	}
+	#wireTwoOriginal {
+		z-index: 11;
+		width: 5.4vw;
+		vertical-align: middle;
+	}
+
+	/*---------*/
+
+	.trapDivsOriginal {
+	text-align: center;
+	line-height: 1vh;
+	}
+
+	#cageDivOriginal {
+		position: absolute;
+		right: 0;
+		margin-right: 5vw;
+		bottom: 0;
+		margin-bottom: -1vh;
+	}
+	#counterWeightDivOriginal {
+		position: absolute;
+		left: 0;
+		margin-left: 75vw;
+		bottom: 0;
+
+	}
+	#plankDivOriginal {
+		position: absolute;
+		right: 0;
+		margin-right: 1vw;
+		bottom: 0;
+	}
+	#pivotDivOriginal {
+		position: absolute;
+		left: 0;
+		margin-left: 57vw;
+		bottom: 0;
+	}
+	#beamDivOriginal {
+		position: absolute;
+		left: 0;
+		margin-left: 90vw;
+		bottom: 0;
+	}
+	#tripWireDivOriginal {
+		position: absolute;
+		left: 0;
+		margin-left: 45vw;
+		bottom: 0;
+	}
+	#wireDivOriginal {
+		position: absolute;
+		left: 0;
+		margin-left: 85vw;
+		bottom: 0;
+	}
+
+</style>
+
+<!--<div id="cageDivThree" class="trapDivsThree" ondrop="dropDifferentScience(event, 1)" ondragover="allowDropScience(event)">
+	<img id="cageThreeOriginal" src="../../../Assets/L1 Science/Cage.png" draggable="true" ondragstart="dragScience(event)"/>
+</div>
+<div id="counterWeightDivThree" class="trapDivsThree" ondrop="dropDifferentScience(event, 2)" ondragover="allowDropScience(event)">
+	<img id="counterWeightThreeOriginal" src="../../../Assets/L1 Science/CounterWeight.png" draggable="true" ondragstart="dragScience(event)"/>
+</div>
+<div id="plankDivThree" class="trapDivsThree" ondrop="dropDifferentScience(event, 3)" ondragover="allowDropScience(event)">
+	<img id="plankThreeOriginal" src="../../../Assets/L1 Science/Plank.png" draggable="true" ondragstart="dragScience(event)"/>
+</div>
+<div id="pivotDivThree" class="trapDivsThree" ondrop="dropDifferentScience(event, 4)" ondragover="allowDropScience(event)">
+	<img id="pivotThreeOriginal" src="../../../Assets/L1 Science/pivot.png" draggable="true" ondragstart="dragScience(event)"/>
+</div>
+<div id="beamDivThree" class="trapDivsThree" ondrop="dropDifferentScience(event, 5)" ondragover="allowDropScience(event)">
+	<img id="beamThreeOriginal" src="../../../Assets/L1 Science/Beam.png" draggable="true" ondragstart="dragScience(event)"/>	
+</div>
+<div id="tripWireDivThree" class="trapDivsThree" ondrop="dropDifferentScience(event, 6)" ondragover="allowDropScience(event)">
+	<img id="tripWireThreeOriginal" src="../../../Assets/L1 Science/tripWire.png" draggable="true" ondragstart="dragScience(event)"/>
+</div>
+
+<style type="text/css">
+	.trapDivsThree {
+	text-align: center;
+	line-height: 1vh;
+	}
+
+	#cageDivThree {
+		position: absolute;
+		left: 0;
+		margin-left: 57.2vw;
+		bottom: 0;
+		margin-bottom: -1vh;
+		width: 16.75vw;
+		height: 70.24vw;
+
+	}
+	#counterWeightDivThree {
+		position: absolute;
+		left: 0;
+		margin-left: 105vw;
+		top: 0;
+		margin-top: 5vh;
+		width: 12vw;
+		height: 12vw;
+	}
+	#plankDivThree {
+		z-index: 13;
+		position: absolute;
+		left: 0;
+		margin-left: 25.9vw;
+		top: 0;
+		margin-top: 58.5vh;
+		width: 41.5vw;
+		height: 4.15vw;
+		-ms-transform: rotate(65deg); /* IE 9 */
+    -webkit-transform: rotate(65deg); /* Chrome, Safari, Opera */
+    transform: rotate(65deg);
+	}
+	#pivotDivThree {
+		position: absolute;
+		left: 0;
+		margin-left: 35vw;
+		top: 0;
+		margin-top: 56vh;
+		width: 14vw;
+		height: 23.3333334vw;
+	}
+	#beamDivThree {
+		position: absolute;
+		left: 0;
+		margin-left: 46.6vw;
+		top: 0;
+		margin-top: 71vh;
+		width: 7.8vw;
+		height: 23.4vw;
+		-ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);
+	}
+	#tripWireDivThree {
+		position: absolute;
+		left: 0;
+		margin-left: 57.55vw;
+		top: 0;
+		margin-top: 86.2vh;
+		width: 44.4vw;
+		height: 7.8vw;
+	}
+
+	/*-----------*/
+	#cageThreeOriginal {
+		z-index: 11;
+		width: 16.75vw;
+		vertical-align: middle;
+	}
+	#counterWeightThreeOriginal {
+		z-index: 11;
+		width: 12vw;
+		vertical-align: middle;
+	}
+	#plankThreeOriginal {
+		z-index: 12;
+		width: 41.5vw;
+		vertical-align: middle;
+	}
+	#pivotThreeOriginal {
+		z-index: 10;
+		width: 14vw;
+		vertical-align: middle;
+	}
+	#beamThreeOriginal {
+		z-index: 10;
+		width: 7.8vw;
+		vertical-align: middle;
+	}
+	#tripWireThreeOriginal {
+		z-index: 10;
+		width: 44.4vw;
+		vertical-align: middle;
+	}
+	#wireThreeOriginal {
+		z-index: 11;
+		width: 5.4vw;
+		vertical-align: middle;
+	}
+
+</style>-->
+
+<div id="hiddenForInvis">
+	<div class="textBox" id="darkerblue" z-index="25"></div>
+	<div class="textBox" id="lighterblue" z-index="25"></div>
+	</div>
+
+<img id="speakerCircle" src="../../../Assets/LOGO2.png"/>
+
+
+	<div id="texttextBox"><h1 id="textArea"></h1></div>
+
+
+<style type="text/css">
+	#hiddenForInvis {
+			opacity: 0;
+		}
+
+		.textBox {
+			position: absolute;
+			width: 110vw;
+			margin-right: -3vw;
+			margin-left: -3vw;
+			
+		}
+		#darkerblue {
+			background-color: #0B6E9E;
+			height: 2vh;
+			bottom: 0;
+			margin-bottom: 25vh;
+		}
+		#lighterblue {
+			background-color: #148ABC;
+			height: 25vh;
+			bottom: 0;
+		}
+		#speakerCircle {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			margin-bottom: 1.5vh;
+			margin-left: 4vw;
+			height: 22vh;
+			opacity: 0;
+			z-index: 22;
+		}
+		#texttextBox {
+			color: #FFF;
+			width: 75vw;
+			position: absolute;
+			bottom: 0;
+			margin-bottom: 5vh;
+			height: 15vh;
+			right: 0;
+			margin-right: 5vw;
+			display:table;
+			z-index: 22;
+		}
+		#textArea {
+			 display:table-cell;
+        vertical-align:middle;
+        opacity: 0;
+
+		}
+
+		h1 {
+			font-size: 3em;
+		}
+</style>
+
+<img src="../../../Assets/Goblin/PencilGoblinRunLeft.gif" id="goblin"/>
+
+
+<style type="text/css">
+	#goblin {
+		position: absolute;
+		height: 42vh;
+		right: 0;
+		bottom: 0;
+		margin-right: -15vw;
+		margin-bottom: -2vh;
+
+		z-index: -1;
+	}
+
+	#goblinPos {
+		position: absolute;
+		height: 42vh;
+		right: 0;
+		bottom: 0;
+		margin-right: 28.2vw;
+		margin-bottom: -2vh;
+
+		z-index: -1;
+
+	}
+	#goblinStand {
+		position: absolute;
+		height: 42vh;
+		right: 0;
+		bottom: 0;
+		margin-right: 28.4vw;
+		margin-bottom: -1.5vh;
+
+		z-index: -1;
+	}
+</style>
+</body>
+</html>

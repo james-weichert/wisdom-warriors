@@ -1,0 +1,56 @@
+<!Doctype html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Download Test</title>
+</head>
+<body>
+<textarea id="textbox">Type something here</textarea> <button id="create">Create file</button> <a download="ProgressReport.txt" id="downloadlink" style="display: none" target="_blank" style="target-new: tab;">Download</a>
+
+
+<script type="text/javascript">
+var SuccessLang = 7;
+var FailLang = 19;
+var SuccessSocial = 2;
+var FailSocial = 9;
+
+var successRate = Math.round(100*((SuccessLang + SuccessSocial)/(FailLang + FailSocial)));
+
+var Name = "James";
+var DateNow = new Date();
+var DateNowTime = DateNow.toLocaleDateString();
+var textData = "Wisdom Warriors Student Progress Report\n\n" + DateNowTime + "\n\n\nStudent Name:\n\nCharacter:\nFavorite Subject:\nImprovement Subject:\n\nPower-Gems:\nMath Experience Points:\nLanguage Arts Experience Points:\nScience Experience Points:\nSocial Studies Experience Points\n\nLast Played:\n\nOverall Question Success Rate: " + successRate + "%\n\nCorrect Answers - Math:\nCorrect Answers - Language Arts:\nCorrect Answers - Science:\nCorrect Answers - Social Studies:\n\nIncorrent Answers - Math:\nIncorrent Answers - Language Arts:\nIncorrent Answers - Science:\nIncorrent Answers - Social Studies:\n";
+(function () {
+var textFile = null,
+  makeTextFile = function (text) {
+    var data = new Blob([text], {type: 'text/plain'});
+
+    // If we are replacing a previously generated file we need to
+    // manually revoke the object URL to avoid memory leaks.
+    if (textFile !== null) {
+      window.URL.revokeObjectURL(textFile);
+    }
+
+   	var firstPart = "ProgressReport-";
+   	var concated  = firstPart.concat(Name);
+    document.getElementById('downloadlink').download = concated;
+
+    textFile = window.URL.createObjectURL(data);
+
+    return textFile;
+  };
+
+
+  var create = document.getElementById('create'),
+    //textbox = document.getElementById('textbox');
+
+  create.addEventListener('click', function () {
+    var link = document.getElementById('downloadlink');
+    link.href = makeTextFile(textData);
+    link.style.display = 'block';
+    document.getElementById('downloadlink').click();
+  }, false);
+})();
+</script>
+</body>
+</html>

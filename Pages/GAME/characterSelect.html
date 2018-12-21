@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wisdom Warriors - Choose A Character</title>
+	<link rel="icon" type="image/x-icon" href="../../Assets/favicon.ico" />
+	<script type="text/javascript" src="game.js"></script>
+
+	<style type="text/css">
+		body {
+			overflow-x: hidden;
+			overflow-y: hidden;
+		}
+	</style>
+</head>
+<body onload="selectCharFunc()">
+<img src="../../Assets/Characters/ChooseACharacter.png" id="ChooseACharacter"/>
+<a href="name.html"><img src="../../Assets/ARROWCOIN.png" id="Arrow"/></a>
+<table>
+	<tr>
+		<td>
+			<a href="Characters/Ajax.html"><img src="../../Assets/Characters/AjaxCoin.png"/></a>
+		</td>
+		<td>
+			<a href="Characters/Nova.html"><img src="../../Assets/Characters/NovaCoin.png"/></a>
+		</td>
+		<td>
+			<a href="Characters/Dana.html"><img src="../../Assets/Characters/DanaCoin.png"/></a>
+		</td>
+		<td>
+			<a href="Characters/Ramon.html"><img src="../../Assets/Characters/RamonCoin.png"/></a>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<a href="Characters/Sofia.html"><img src="../../Assets/Characters/SofiaCoin.png"/></a>
+		</td>
+		<td>
+			<a href="Characters/Quinn.html"><img src="../../Assets/Characters/QuinnCoin.png"/></a>
+		</td>
+		<td>
+			<a href="Characters/Jade.html"><img src="../../Assets/Characters/JadeCoin.png"/></a>
+		</td>
+		<td>
+			<a href="Characters/Sage.html"><img src="../../Assets/Characters/SageCoin.png"/></a>
+		</td>
+	</tr>
+</table>
+	<style type="text/css">
+	#Arrow {
+		position: absolute;
+		width: 10vw;
+		-moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+        margin-top: -12vh;
+	}
+
+	#ChooseACharacter {
+   width: 60vw; 
+   transform: translate(-50%, -50%);
+   position: absolute;
+   top: 50%;  
+   left: 50%;
+   margin-top: -40vh;
+	}
+	table {
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 15vh;
+	}
+	td {
+		padding: 1vw;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	td img {
+		width: 20vw;
+	}
+body {
+
+	background: linear-gradient(270deg, #148abc, #980ecc, #cf0000, #4ea647, #e35700, #f8cb40, #db386b, #1d619a, #0da078);
+
+	background-size: 2000%, 2000%;
+
+-webkit-animation: AnimationName 120s ease infinite;
+-moz-animation: AnimationName 120s ease infinite;
+animation: AnimationName 120s ease infinite;
+}
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 92%}
+    50%{background-position:100% 9%}
+    100%{background-position:0% 92%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 92%}
+    50%{background-position:100% 9%}
+    100%{background-position:0% 92%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 92%}
+    50%{background-position:100% 9%}
+    100%{background-position:0% 92%}
+}
+</body>
+</html>

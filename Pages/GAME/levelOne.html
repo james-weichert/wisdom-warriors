@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wisdom Warriors - Let's Get Started</title>
+	<link rel="icon" type="image/x-icon" href="../../Assets/favicon.ico" />
+	<script type="text/javascript" src="game.js"></script>
+	<style type="text/css">
+		body {
+			overflow-x: hidden;
+		}
+	</style>
+</head>
+<body onload="onLoadStartFunc(1)">
+	<style type="text/css">
+		body {
+			background-image: url('../../Assets/Castle/BrickWall.png');
+			background-size: 60vw;
+			background-repeat: repeat;
+		}
+
+		#torchOne {
+			position: absolute;
+			margin-top: 20vh;
+			margin-left: 23vw;
+		}
+		#torchTwo {
+			position: absolute;
+			margin-top: 20vh;
+			margin-left: 62vw;
+		}
+		#podium {
+			position: absolute;
+			display: block;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin-left: auto;
+			margin-right: auto;
+			
+		
+		}
+		#pencil {
+			position: absolute;
+			display: block;
+			left: 0;
+			right: 0;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 40vh;	
+
+-webkit-animation: Pencil 6s ease infinite;
+-moz-animation: Pencil 6s ease infinite;
+animation: Pencil 6s ease infinite;
+		}
+
+		@-webkit-keyframes Pencil {
+    0%{margin-top: 40vh;}
+    48%{margin-top: 35vh;}
+    52%{margin-top: 35vh;}
+    100%{margin-top: 40vh;}
+}
+@-moz-keyframes Pencil {
+     0%{margin-top: 40vh;}
+    48%{margin-top: 35vh;}
+    52%{margin-top: 35vh;}
+    100%{margin-top: 40vh;}
+}
+@keyframes Pencil { 
+     0%{margin-top: 40vh;}
+    48%{margin-top: 35vh;}
+    52%{margin-top: 35vh;}
+    100%{margin-top: 40vh;}
+}
+
+body {
+	overflow-y: hidden;
+}
+#character {
+	height: 100vh;
+	position: absolute;
+	margin-top: 6vh;
+}
+#merlin {
+	height: 100vh;
+	position: absolute;
+	margin-top: 4vh;
+	margin-left: 70vw;
+}
+#letsGetStarted {
+	height: 30vh;
+	position: absolute;
+	display: block;
+			left: 0;
+			right: 0;
+			margin-left: auto;
+			margin-right: auto;
+}
+#ClickToStart {
+	height: 10vh;
+	position: absolute;
+	display: block;
+			left: 0;
+			right: 0;
+			margin-left: auto;
+			margin-right: auto;
+	margin-top: 90vh;
+
+
+
+	-webkit-animation: FadeInOut 5s ease infinite;
+-moz-animation: FadeInOut 5s ease infinite;
+animation: FadeInOut 5s ease infinite;
+}
+
+@-webkit-keyframes FadeInOut {
+    0%{opacity: 1}
+    50%{opacity: 0}
+    100%{opacity: 1}
+}
+@-moz-keyframes FadeInOut {
+    0%{opacity: 1}
+    50%{opacity: 0}
+    100%{opacity: 1}
+}
+@keyframes FadeInOut { 
+    0%{opacity: 1}
+    50%{opacity: 0}
+    100%{opacity: 1}
+
+}
+
+#clickDiv {
+	width: 100vw;
+	height: 100vh;
+	position: absolute; 
+}
+#StartButton {
+	height: 10vh;
+	position: absolute;
+	margin-top: 2.5vh;
+	left: 0;
+	right: 0;
+}
+	</style>
+
+	<img src="../../Assets/Castle/Torch.gif" height ="200vh" id = "torchOne"/>
+	<img src="../../Assets/Castle/Torch2.gif" height ="200vh" id = "torchTwo"/>
+	<img src="../../Assets/Castle/Podium.png" width="200vw" id="podium"/>
+	<img src="../../Assets/Castle/Pencil.png" height = "100vh" id="pencil"/>
+	<img src="" id="character" id="character"/>
+	<img src="../../Assets/Characters/Single/Merlin.gif" id="merlin"/>
+	<img src="../../Assets/Text/LetsGetStarted.png" id="letsGetStarted"/>
+	<img src="../../Assets/Text/ClickToStart.png" id="ClickToStart"/>
+	<a href="levelOneA.html"><div id="clickDiv"></div></a>
+	<a href="start.html"><img src="../../Assets/StartButton.png" id="StartButton"/></a>
+</body>
+</html>

@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wisdom Warriors - Level 1</title>
+	<link rel="icon" type="image/x-icon" href="../../../Assets/favicon.ico" />
+	<script type="text/javascript" src="../game.js"></script>
+	<link rel="stylesheet" type="text/css" href="../GameStyle.css"/>
+
+	<style type="text/css">
+		body {
+			overflow-x: hidden;
+			overflow-y: hidden;
+
+		}
+	</style>
+</head>
+<body onload="LOneMathStart()">
+<img src="../../../Assets/L1 Math/FullDoor.png" id="door"/>
+<img src="../../../Assets/Castle/Torch.gif" height ="200vh" id = "torchOne"/>
+<img src="" id="character" id="character"/>
+
+<style type="text/css">
+	body {
+			background-image: url('../../../Assets/Castle/BrickWall.png');
+			background-size: 60vw;
+			background-repeat: repeat;
+		}
+		#door {
+			position: absolute;
+			height: 105vh;
+			bottom: 0;
+			margin-bottom: -1vh;
+			right: 0;
+			left: 0;
+			margin-right: auto;
+			margin-left: auto;
+
+
+		}
+		#torchOne {
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			margin-top: 20vh;
+			right: 0;
+			margin-right: 2vw;
+		}
+		#character {
+	height: 100vh;
+	position: absolute;
+	margin-top: 6vh;
+	left: 0;
+	margin-left: 1vw;
+}
+</style>
+
+<img id="puzzleCode" src="../../../Assets/L1 Math/PuzzleCode.png"/>
+<img id="puzzleCodeTwo" src="../../../Assets/L1 Math/PuzzleCode.png"/>
+
+<img src="../../../Assets/L1 Language Arts/GoblinNote.png" id="GoblinNote"/>
+<img src="../../../Assets/L1 Language Arts/Nail.png" id="nail"/>
+
+<div id="hiddenForInvis">
+	<div class="textBox" id="darkerblue"></div>
+	<div class="textBox" id="lighterblue"></div>
+	</div>
+
+<img id="speakerCircle" src="../../../Assets/LOGO2.png"/>
+
+
+	<div id="texttextBox"><h1 id="textArea"></h1></div>
+
+<style type="text/css">
+	#hiddenForInvis {
+			opacity: 0;
+		}
+
+		.textBox {
+			position: absolute;
+			width: 110vw;
+			margin-right: -3vw;
+			margin-left: -3vw;
+			
+		}
+		#darkerblue {
+			z-index: 99;
+			background-color: #0B6E9E;
+			height: 2vh;
+			bottom: 0;
+			margin-bottom: 25vh;
+		}
+		#lighterblue {
+			z-index: 99;	
+			background-color: #148ABC;
+			height: 25vh;
+			bottom: 0;
+		}
+		#speakerCircle {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			margin-bottom: 1.5vh;
+			margin-left: 4vw;
+			height: 22vh;
+			opacity: 0;
+		}
+		#texttextBox {
+			color: #FFF;
+			width: 75vw;
+			position: absolute;
+			bottom: 0;
+			margin-bottom: 5vh;
+			height: 15vh;
+			right: 0;
+			margin-right: 5vw;
+			display:table;
+		}
+		#textArea {
+			 display:table-cell;
+        vertical-align:middle;
+        opacity: 0;
+
+		}
+
+		h1 {
+			font-size: 3em;
+		}
+
+</style>
+
+<style type="text/css">
+	#puzzleCode {
+		position: absolute;
+		width: 15vw;
+		top: 0;
+		left: 0;
+		margin-left: 70vw;
+		margin-top: 40vh;
+	}
+	#puzzleCodeTwo {
+		opacity: 0;
+		position: absolute;
+		width: 40vw;
+		top: 0;
+		left: 50%;
+		margin-left: -20vw;
+		margin-top: 2vh;
+	}
+	#GoblinNote {
+		position: absolute;
+		width: 15vw;
+		left: : 0;
+		margin-left: 14vw;
+		top: 0;
+		margin-top: 30vh;
+		z-index: -2;
+	}
+	#nail {
+		position: absolute;
+		z-index: 5;
+		width: 1vw;
+		left: 0;
+		margin-left: 20vw;
+		top: 0;
+		margin-top: 31vh;
+		z-index: -1;
+
+	}
+</style>
+	
+
+
+<table id="activeTable">
+	<tr>
+		<td id="tdHelloOne">
+			<div id="dragDivOne" ondrop="dropDifferent(event, 1)" ondragover="allowDrop(event)">
+			</div>
+		</td>
+		<td id="tdHelloTwo">
+			<div id="dragDivTwo" ondrop="dropDifferent(event, 2)" ondragover="allowDrop(event)">
+			</div>
+		</td>
+		<td id="tdHelloThree">
+			<div id="dragDivThree" ondrop="dropDifferent(event, 3)" ondragover="allowDrop(event)">
+			</div>
+		</td>
+	</tr>
+</table>
+
+<table id="originalTableoriginal">
+	<tr>
+		<td class="paddingTD" id="paddingTDOne">
+			<div id="originalDivOneoriginal" ondrop="drop(event)" ondragover="allowDrop(event)" class="originalDivsoriginal">
+				<img src="../../../Assets/L1 Math/TriYel.png" id="TriYel" class="shapesOriginal" draggable="true" ondragstart="drag(event)"/>
+			</div>
+		</td>
+		<td class="paddingTD" id="paddingTDTwo">
+			<div id="originalDivTwooriginal" ondrop="drop(event)" ondragover="allowDrop(event)" class="originalDivsoriginal">
+				<img src="../../../Assets/L1 Math/TriPin.png" id="TriPin" class="shapesOriginal" draggable="true" ondragstart="drag(event)"/>
+			</div>
+		</td>
+		<td class="paddingTD" id="paddingTDThree">
+			<div id="originalDivThreeoriginal" ondrop="drop(event)" ondragover="allowDrop(event)" class="originalDivsoriginal">
+				<img src="../../../Assets/L1 Math/TriBlu.png" id="TriBlu" class="shapesOriginal" draggable="true" ondragstart="drag(event)"/>
+			</div>
+		</td>
+		<td class="paddingTD" id="paddingTDFour">
+			<div id="originalDivFouroriginal" ondrop="drop(event)" ondragover="allowDrop(event)" class="originalDivsoriginal">
+				<img src="../../../Assets/L1 Math/TriRed.png" id="TriRed" class="shapesOriginal" draggable="true" ondragstart="drag(event)"/>
+			</div>
+		</td>
+		<td class="paddingTD" id="paddingTDFive">
+			<div id="originalDivFiveoriginal" ondrop="drop(event)" ondragover="allowDrop(event)" class="originalDivsoriginal">
+				<img src="../../../Assets/L1 Math/TriGre.png" id="TriGre" class="shapesOriginal" draggable="true" ondragstart="drag(event)"/>
+			</div>
+		</td>
+		<td class="paddingTD" id="paddingTDSix">
+			<div id="originalDivSixoriginal" ondrop="drop(event)" ondragover="allowDrop(event)" class="originalDivsoriginal">
+				<img src="../../../Assets/L1 Math/TriOra.png" id="TriOra" class="shapesOriginal" draggable="true" ondragstart="drag(event)"/>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="paddingTD" id="paddingTDSeven">
+			<div id="originalDivSevenoriginal" ondrop="drop(event)" ondragover="allowDrop(event)" class="originalDivsoriginal">
+				<img src="../../../Assets/L1 Math/SquRed.png" id="SquRed" class="shapesOriginal" draggable="true" ondragstart="drag(event)"/>
+			</div>
+		</td>
+		<td class="paddingTD" id="paddingTDEight">
+			<div id="originalDivEightoriginal" ondrop="drop(event)" ondragover="allowDrop(event)" class="originalDivsoriginal">
+				<img src="../../../Assets/L1 Math/SquOra.png" id="SquOra" class="shapesOriginal" draggable="true" ondragstart="drag(event)"/>
+			</div>
+		</td>
+		<td class="paddingTD" id="paddingTDNine">
+			<div id="originalDivNineoriginal" ondrop="drop(event)" ondragover="allowDrop(event)" class="originalDivsoriginal">
+				<img src="../../../Assets/L1 Math/SquGre.png" id="SquGre" class="shapesOriginal" draggable="true" ondragstart="drag(event)"/>
+			</div>
+		</td>
+		<td class="paddingTD" id="paddingTDTen">
+			<div id="originalDivTenoriginal" ondrop="drop(event)" ondragover="allowDrop(event)" class="originalDivsoriginal">
+				<img src="../../../Assets/L1 Math/SquPin.png" id="SquPin" class="shapesOriginal" draggable="true" ondragstart="drag(event)"/>
+			</div>
+		</td>
+		<td class="paddingTD" id="paddingTDEleven">
+			<div id="originalDivElevenoriginal" ondrop="drop(event)" ondragover="allowDrop(event)" class="originalDivsoriginal">
+				<img src="../../../Assets/L1 Math/SquYel.png" id="SquYel" class="shapesOriginal" draggable="true" ondragstart="drag(event)"/>
+			</div>
+		</td>
+		<td class="paddingTD" id="paddingTDTwelve">
+			<div id="originalDivTwelveoriginal" ondrop="drop(event)" ondragover="allowDrop(event)" class="originalDivsoriginal">
+				<img src="../../../Assets/L1 Math/SquBlu.png" id="SquBlu" class="shapesOriginal" draggable="true" ondragstart="drag(event)"/>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td class="paddingTD" id="paddingTDThirteen">
+			<div id="originalDivThirteenoriginal" ondrop="drop(event)" ondragover="allowDrop(event)" class="originalDivsoriginal">
+				<img src="../../../Assets/L1 Math/CirGre.png" id="CirGre" class="shapesOriginal" draggable="true" ondragstart="drag(event)"/>
+			</div>
+		</td>
+		<td class="paddingTD" id="paddingTDFourteen">
+			<div id="originalDivFourteenoriginal" ondrop="drop(event)" ondragover="allowDrop(event)" class="originalDivsoriginal">
+				<img src="../../../Assets/L1 Math/CirBlu.png" id="CirBlu" class="shapesOriginal" draggable="true" ondragstart="drag(event)"/>
+			</div>
+		</td>
+		<td class="paddingTD" id="paddingTDFifteen">
+			<div id="originalDivFifteenoriginal" ondrop="drop(event)" ondragover="allowDrop(event)" class="originalDivsoriginal">
+				<img src="../../../Assets/L1 Math/CirPin.png" id="CirPin" class="shapesOriginal" draggable="true" ondragstart="drag(event)"/>
+			</div>
+		</td>
+		<td class="paddingTD" id="paddingTDSixteen">
+			<div id="originalDivSixteenoriginal" ondrop="drop(event)" ondragover="allowDrop(event)" class="originalDivsoriginal">
+				<img src="../../../Assets/L1 Math/CirYel.png" id="CirYel" class="shapesOriginal" draggable="true" ondragstart="drag(event)"/>
+			</div>
+		</td>
+		<td class="paddingTD" id="paddingTDSeventeen">
+			<div id="originalDivSeventeenoriginal" ondrop="drop(event)" ondragover="allowDrop(event)" class="originalDivsoriginal">
+				<img src="../../../Assets/L1 Math/CirOra.png" id="CirOra" class="shapesOriginal" draggable="true" ondragstart="drag(event)"/>
+			</div>
+		</td>
+		<td class="paddingTD" id="paddingTDEighteen">
+			<div id="originalDivEighteenoriginal" ondrop="drop(event)" ondragover="allowDrop(event)" class="originalDivsoriginal">
+				<img src="../../../Assets/L1 Math/CirRed.png" id="CirRed" class="shapesOriginal" draggable="true" ondragstart="drag(event)"/>
+			</div>
+		</td>
+	</tr>
+</table>
+
+<style type="text/css">
+
+td {
+	padding: 0.5vw;
+}
+
+#activeTable td {
+	padding: 0.45vw;
+}
+#activeTable {
+	
+	position: absolute;
+	top: 0;
+	margin-top: 9.8vh;
+	right: 0;
+	margin-right: 33.3vw;
+	
+}
+#activeTableTwo td {
+	padding: 0.2vw;
+}
+#activeTableTwo {
+	border: 1px solid white;
+	position: absolute;
+	top: 0;
+	margin-top: 42.5vh;
+	right: 0;
+	margin-right: 16.1vw;
+	
+}
+
+#originalTable {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	margin-top: 27vh;
+	width: 35vw;
+	left: 50%;
+	margin-left: -17.5vw;
+}
+
+.originalDivs {
+	width: 4.5vw;
+	height: 9vh;
+	text-align: center;
+	line-height: 9vh;
+}
+
+#dragDivOne {
+	width: 4.5vw;
+	height: 9vh;
+	text-align: center;
+	line-height: 9vh;
+}
+#dragDivTwo {
+	width: 4.5vw;
+	height: 9vh;
+	text-align: center;
+	line-height: 9vh;
+}
+#dragDivThree {
+	width: 4.5vw;
+	height: 9vh;
+	text-align: center;
+	line-height: 9vh;
+}
+/*-----*/
+#dragDivOneTwo {
+	border: 1px solid white;
+	width: 1.5vw;
+	height: 3vh;
+	text-align: center;
+	line-height: 3vh;
+}
+#dragDivTwoTwo {
+	border: 1px solid white;
+	width: 1.5vw;
+	height: 3vh;
+	text-align: center;
+	line-height: 3vh;
+}
+#dragDivThreeTwo {
+	border: 1px solid white;
+	width: 1.5vw;
+	height: 3vh;
+	text-align: center;
+	line-height: 3vh;
+}
+	.shapes {
+
+		width: 4.2vw;
+		vertical-align: middle;
+	}
+
+#originalTableoriginal {
+	position: absolute;
+	top: 0;
+	margin-top: 51vh;
+	width: 12vw;
+	right: 0;
+	margin-right: 16.5vw;
+}
+/*----------------------
+------------------------
+------------------------
+------------------------*/
+.originalDivsoriginal {
+	width: 1.5vw;
+	height: 3vh;
+	text-align: center;
+	line-height: 3vh;
+}
+#originalDivOneoriginal {
+	width: 1.5vw;
+	height: 3vh;
+	text-align: center;
+	line-height: 3vh;
+}
+#originalDivTwooriginal {
+	width: 1.5vw;
+	height: 3vh;
+	text-align: center;
+	line-height: 3vh;
+}
+#originalDivThreeoriginal {
+	width: 1.5vw;
+	height: 3vh;
+	text-align: center;
+	line-height: 3vh;
+}
+#originalDivFouroriginal {
+	width: 1.5vw;
+	height: 3vh;
+	text-align: center;
+	line-height: 3vh;
+}
+#originalDivFiveoriginal {
+	width: 1.5vw;
+	height: 3vh;
+	text-align: center;
+	line-height: 3vh;
+}
+#originalDivSixoriginal {
+	width: 1.5vw;
+	height: 3vh;
+	text-align: center;
+	line-height: 3vh;
+}
+#originalDivSevenoriginal {
+	width: 1.5vw;
+	height: 3vh;
+	text-align: center;
+	line-height: 3vh;
+}
+#originalDivEightoriginal {
+	width: 1.5vw;
+	height: 3vh;
+	text-align: center;
+	line-height: 3vh;
+}
+#originalDivNineoriginal {
+	width: 1.5vw;
+	height: 3vh;
+	text-align: center;
+	line-height: 3vh;
+}
+#originalDivTenoriginal {
+	width: 1.5vw;
+	height: 3vh;
+	text-align: center;
+	line-height: 3vh;
+}
+#originalDivElevenoriginal {
+	width: 1.5vw;
+	height: 3vh;
+	text-align: center;
+	line-height: 3vh;
+}
+#originalDivTwelveoriginal {
+	width: 1.5vw;
+	height: 3vh;
+	text-align: center;
+	line-height: 3vh;
+}
+#originalDivThirteenoriginal {
+	width: 1.5vw;
+	height: 3vh;
+	text-align: center;
+	line-height: 3vh;
+}
+#originalDivFourteenoriginal {
+	width: 1.5vw;
+	height: 3vh;
+	text-align: center;
+	line-height: 3vh;
+}
+#originalDivFifteenoriginal {
+	width: 1.5vw;
+	height: 3vh;
+	text-align: center;
+	line-height: 3vh;
+}
+#originalDivSixteenoriginal {
+	width: 1.5vw;
+	height: 3vh;
+	text-align: center;
+	line-height: 3vh;
+}
+#originalDivSeventeenoriginal {
+	width: 1.5vw;
+	height: 3vh;
+	text-align: center;
+	line-height: 3vh;
+}
+#originalDivEighteenoriginal {
+	width: 1.5vw;
+	height: 3vh;
+	text-align: center;
+	line-height: 3vh;
+}
+/*----------------------
+------------------------
+------------------------
+------------------------*/
+.paddingTD {
+	padding: 0.1vw;
+}
+#paddingTDOne {
+	padding: 0.1vw;
+}
+#paddingTDTwo {
+	padding: 0.1vw;
+}
+#paddingTDThree {
+	padding: 0.1vw;
+}
+#paddingTDFour {
+	padding: 0.1vw;
+}
+#paddingTDFive {
+	padding: 0.1vw;
+}
+#paddingTDSix {
+	padding: 0.1vw;
+}
+#paddingTDSeven {
+	padding: 0.1vw;
+}
+#paddingTDEight {
+	padding: 0.1vw;
+}
+#paddingTDNine {
+	padding: 0.1vw;
+}
+#paddingTDTen {
+	padding: 0.1vw;
+}
+#paddingTDEleven {
+	padding: 0.1vw;
+}
+#paddingTDTwelve {
+	padding: 0.1vw;
+}
+#paddingTDThirteen {
+	padding: 0.1vw;
+}
+#paddingTDFourteen {
+	padding: 0.1vw;
+}
+#paddingTDFifteen {
+	padding: 0.1vw;
+}
+#paddingTDSixteen {
+	padding: 0.1vw;
+}
+#paddingTDSeventeen {
+	padding: 0.1vw;
+}
+#paddingTDEighteen {
+	padding: 0.1vw;
+}
+/*----------------------
+------------------------
+------------------------
+------------------------*/
+
+
+#TriYel {
+
+		width: 1vw;
+		vertical-align: middle;
+	}
+#TriPin {
+
+		width: 1vw;
+		vertical-align: middle;
+	}
+#TriBlu {
+
+		width: 1vw;
+		vertical-align: middle;
+	}
+#TriRed {
+
+		width: 1vw;
+		vertical-align: middle;
+	}
+#TriGre {
+
+		width: 1vw;
+		vertical-align: middle;
+	}
+#TriOra {
+
+		width: 1vw;
+		vertical-align: middle;
+	}
+#SquRed {
+
+		width: 1vw;
+		vertical-align: middle;
+	}
+#SquOra {
+
+		width: 1vw;
+		vertical-align: middle;
+	}
+#SquGre {
+
+		width: 1vw;
+		vertical-align: middle;
+	}
+#SquPin {
+
+		width: 1vw;
+		vertical-align: middle;
+	}
+#SquYel {
+
+		width: 1vw;
+		vertical-align: middle;
+	}
+#SquBlu {
+
+		width: 1vw;
+		vertical-align: middle;
+	}
+#CirGre {
+
+		width: 1vw;
+		vertical-align: middle;
+	}
+#CirBlu {
+
+		width: 1vw;
+		vertical-align: middle;
+	}
+#CirPin {
+
+		width: 1vw;
+		vertical-align: middle;
+	}
+#CirYel {
+
+		width: 1vw;
+		vertical-align: middle;
+	}
+#CirOra {
+
+		width: 1vw;
+		vertical-align: middle;
+	}
+#CirRed {
+
+		width: 1vw;
+		vertical-align: middle;
+	}
+
+
+/*----------------------
+------------------------
+------------------------
+------------------------*/
+</style>
+
+<script type="text/javascript">
+
+</script>
+
+</body>
+</html>

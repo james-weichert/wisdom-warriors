@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wisdom Warriors - Start</title>
+	<link rel="icon" type="image/x-icon" href="../../Assets/favicon.ico" />
+
+
+	<script type="text/javascript" src="game.js"></script>
+
+</head>
+<body onload="onLoadStartFunc(0)">
+
+<div id="castleselectdiv" onclick="levelOrSetup()"></div>
+	<img src="../../Assets/TITLEFORESTFULL.png" id="titletitle" class="noDrag"/>
+	
+	<img src="../../Assets/clickToSTART.png" id="titletitleTwo" class="noDrag"/>
+
+	<a href="menu.html"><img src="../../Assets/ARROWCOIN.png" id="arrowcoinone" class="noDrag" class="centered-x-axis"/></a>
+
+	<img src="../../Assets/ESP/Coin-ESP.png" id="spanishCoin" onclick="spanishButton()" class="noDrag"/>
+
+	
+<style type="text/css">
+
+
+.noDrag {
+  user-drag: none; 
+user-select: none;
+-moz-user-select: none;
+-webkit-user-drag: none;
+-webkit-user-select: none;
+-ms-user-select: none;
+}
+
+#spanishCoin {
+	height: 15%;
+	position: fixed;
+	right: 0;
+	top: 0;
+	margin-right: 6vw;
+	margin-top: 5vh;
+}
+
+body { 
+
+  background-image: url(../../Assets/Clouds.png);
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+
+  animation: animatedBackground 40s linear infinite;
+}
+/*@keyframes animatedBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100% 0; }
+}*/
+body {
+    height: 100vh;
+    background-size: cover;
+    overflow: hidden;
+
+}
+body {
+  font-family: "tahoma", sans-serif;
+
+    max-width: 100%;
+
+    overflow-x: hidden;
+
+background-color: #64D6DF;
+
+margin: 0;
+padding: 0;
+}
+
+#castleselectdiv {
+	width: 32vw;
+	height: 58vh;
+	position: absolute;
+	margin-top: 25vh;
+	margin-left: 43.5vw;
+	z-index: 99;
+}
+#titletitleTwo {
+	 visibility: visible;
+    height: 100vw;
+}
+#titletitle {
+  height: 100%;
+}
+#titletitleTwo {
+  margin-top: -100vh;
+  height: 100%;
+  position: absolute;
+}
+#arrowcoinone {
+  position: fixed;
+  height: 20%;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 5vh;
+  margin-right: 4vw;
+}
+</style>
+</body>
+</html>

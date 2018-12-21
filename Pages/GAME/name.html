@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wisdom Warriors - What's your Name?</title>
+	<link rel="icon" type="image/x-icon" href="../../Assets/favicon.ico" />
+	<script type="text/javascript" src="game.js"></script>
+	<style type="text/css">
+		body {
+			overflow-x: hidden;
+			overflow-y: hidden;
+		}
+	</style>
+</head>
+<body onload="nameStartFunc()">
+	<img src="../../Assets/WhatIsName.png" id="WhatIsName">
+	<form onsubmit="return submitName()">
+		<input type="text" name="name" placeholder="YOUR FIRST NAME" id="nameinput" autocomplete="off" style="text-transform:uppercase">
+		<table id="buttons">
+	<tr>
+	<td>
+	<a href="start.html"><img src="../../Assets/ARROWCOIN.png" id="arrowcoinoneone" class="centered-x-axis"/></a>
+	</td>
+	<td>
+	<input type="image" src="../../Assets/ARROWCOIN.png" name="Submit" id="submit"/>
+	</td>
+	</tr>
+	</table>
+	</form>
+	
+<style type="text/css">
+@font-face {
+    font-family: 'WisdomFont';
+    src: url('warriortype-webfont.woff2') format('woff2'),
+         url('warriortype-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+	body {
+
+	background: linear-gradient(270deg, #148abc, #980ecc, #cf0000, #4ea647, #e35700, #f8cb40, #db386b, #1d619a, #0da078);
+
+	background-size: 2000%, 2000%;
+
+-webkit-animation: AnimationName 120s ease infinite;
+-moz-animation: AnimationName 120s ease infinite;
+animation: AnimationName 120s ease infinite;
+}
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 92%}
+    50%{background-position:100% 9%}
+    100%{background-position:0% 92%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 92%}
+    50%{background-position:100% 9%}
+    100%{background-position:0% 92%}
+}
+@keyframes AnimationName { 
+    0%{background-position:0% 92%}
+    50%{background-position:100% 9%}
+    100%{background-position:0% 92%}
+}
+
+#WhatIsName {
+	display: block;
+	width: 80vw;
+	margin-left: auto;
+	margin-right: auto;
+	top: 100%;
+  transform: translateY(100%);
+}
+#nameinput {
+	display: block;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	width: 70vw;
+	height: 10vh;
+	top: 180%;
+  transform: translateY(180%);
+
+  font-size: 5em;
+  color: #148ABC;
+  text-align: center;
+
+ font-family: WisdomFont;
+}
+input:not([type]), input[type="text"] { border: 1.5vw solid #148ABC }
+
+#buttons {
+	margin-left: auto;
+	margin-right: auto;
+	left: 19%;
+	transform: translateX(-17%);
+	margin-top: 42vh;
+
+}
+td {
+	padding-left: 32vw;
+	padding-right: 32vw;
+}
+
+#arrowcoinone {
+  height: 20vh;
+}
+#arrowcoinoneone {
+  height: 20vh;
+   -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+        margin-bottom: 2.5vh;
+}
+
+input[type="image"] {
+ 	height: 20vh;
+ 	margin-top: -2vh;
+ }
+</style>
+</body>
+</html>
