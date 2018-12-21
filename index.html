@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wisdom Warriors</title>
+	<link rel="icon" type="image/x-icon" href="Assets/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="styles.css"/>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+	
+	<style type="text/css">
+		@font-face {
+    font-family: 'WisdomFont';
+    src: url('warriortype-webfont.woff2') format('woff2'),
+         url('warriortype-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+	#wisdomFontTitle {
+		font-family: 'WisdomFont', "Source Sans Pro", verdana, sans-serif;
+		height: 15vh;
+		font-size: 5vw;
+	}
+	.myFontClass {
+		font-family: 'WisdomFont', "Source Sans Pro", verdana, sans-serif;
+		font-size: 2.5vw;
+	}
+	p {
+		font-size: 1.25vw;
+	}
+	li {
+		font-size: 1.25vw;
+	}
+	</style>
+
+</head>
+<body>
+	
+<script type="text/javascript">
+
+
+  $(document).ready(function(){       
+            var scroll_pos = 0;
+            $(".parallax").scroll(function() { 
+                scroll_pos = $(".parallax").scrollTop();
+                //console.log(scroll_pos);
+                if(scroll_pos > 2000) {
+                    $("body").css('background-color', '#0B6E9E');
+                } else {
+                    $("body").css('background-color', '#64D6DF');
+                }
+            });
+            //$(docume
+        });
+
+
+        </script>
+
+	
+	
+	<div class="parallax">
+
+		<div class="parallax__layer parallax__layer--back-back">
+	    	<div class="title"><img src="Assets/Title Image/Clouds.png" id="Clouds"/></div>
+	  	</div>
+
+	  	<div class="parallax__layer parallax__layer--back">
+	    	<div class="title"><img src="Assets/Title Image/Castle.png" id="Castle"/></div>
+	  	</div>
+
+	  	<div class="parallax__layer parallax__layer--base">
+	   		<div class="title"><img src="Assets/Title Image/HillTwo.png" id="Hill"/></div>
+	  	</div>
+
+		<div class="parallax__layer parallax__layer--front">
+		    <div class="title"><img src="Assets/Title Image/Flowers.png" id="Flowers"/></div>
+		</div>
+		<div class="parallax_layer parallax__layer--front-front">
+			<div class="title">
+			<div class="content">
+				<div class="textThingy" id="textThingyOne">
+				<div id="movedown">
+							<h1 id="wisdomFontTitle">Wisdom Warriors</h1>
+							<br />
+								<table class="buttonTable">
+									<tbody>
+										<tr>
+											<td>
+												<a href="Pages/GAME/start.html"><img class="button" src="Assets/NewGameButton.png"/></a>
+											</td>
+											<td>
+												<a href="Pages/GAME/start.html"><img class="button" src="Assets/ContinueButton.png"/></a> <!--CONTINUE-->
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							<br />
+							<img src="Assets/HorizontalRule.png" class="hr"/>
+							<div id="contentContent">
+							<div id="testtestdiv">
+							<br />
+							<br />
+							<br />
+							<h1 class="myFontClass">A New Kind of Education for a New Generation</h1>
+							<br />
+							<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+								<div class="flipper">
+									<div class="front">
+										<img src="Assets/LOGO2.png" id="logologotwo"/>
+									</div>
+									<div class="back">
+										<img src="Assets/LOGO2.png" id="logologotwo"/>
+									</div>
+								</div>
+							</div>
+							<br />
+							<h2 class="myFontClass">Wisdom Warriors is a New Educational Game for a New Era of Students.</h2> 
+							<p id="firstpara"><i>Wisdom Warriors</i> is an educational video game for 1st Grade Students currently available for the Web on most mobile devices and computers. The game employs  1st grade level education styles and standards in collaboration with US Department of Education Common Core Standards to align the game's curriculum with that of the student's class. Specifically, <i>Wisdom Warriors</i> focusses on the core subjects of:</p>
+							<ul>
+								<li><i>English Language Arts</i></li>
+								<li><i>Mathematics</i></li>
+								<li><i>Science</i></li>
+								<li><i>Social Studies (History & Geography)</i></li>
+							</ul>
+							<img src="Assets/COINS.png" id="coins"/>
+							<br />
+							<br />
+							<br />
+							<h2 class="myFontClass">Wisdom Warriors uses principles of Gamification to engage students in their learning and motiviate them to succeed.</h2>
+							<p>The Game's mission-based structure allows students to choose their own path through the game and allows them to play at their own speed and level of learning. For each mission, students choose 1 of the 4 Common Core Subjects and use knowledge and skills related to that subject to solve a challenge. Problem-Solving challenges include solving a puzzle, analyzing a letter for clues, inventing a machine, solving a riddle, and more. It's up to the student to choose how they want to solve the problem.</p>
+							<p>Upon successful completion of the challenge, students are rewarded with <i>Experience Points (XP)</i> based on how well they solve the problem. And to encourage students to use a wide varierty of problem-solving methods and tactics, students are rewarded for improving their skills across all 4 Subjects, especially the student's weaker Subjects.</p>
+							<br />
+							<br />
+							<h2 class="myFontClass">Bilingual Learning</h2>
+							<p>In order to broaden access to primary education (especially for Hispanic and low-income students and families) through this game, <i>Wisdom Warriors</i> is entirely bilingual. That means students can play every level and every Problem-Solving Challenge in either English or Spanish. Students having trouble with a certain level in English can quickly play the same level in Spanish in order to better understand what the aim of the challenge is (and vice verse). This feature makes <i>Wisdom Warriors</i> especially suitable for International Schools or biigual classes, especially with a student population of varying levels of Spanish or English proficiency.</p>
+							<br />
+							<img src="Assets/BilingualCoin.png" id="BilingualCoin"/>
+							<br />
+							<br />
+							<br />
+							<br />
+							<h2 class="myFontClass">More than just a Character</h2>
+							<p>With 8 diverse Characters each with their own unique appearances, warrior types and learning styles, every student is sure to find a character they can personally identify with and play as. The game's wide array of characters promotes diversity in gender, race, class, sexual orientation, learning disability, physique and Problem-Solving abilities.</p>
+							<br />
+							<img src="Assets/CharacterRow.png" id="characterRow"/>
+							<br />
+							<br />
+							<br />
+							<h2 class="myFontClass">Stay in the Loop</h2>
+							<p>Downloadble Progress Reports about your students' allow you to keep up to date with how your students are advancing through the game. Track each student's daily activity on the game with data on daily logins, play time, character information, progression through the game, Experience Points (XP), question answers, and strengths and weaknesses. You can use these progress reports to better tailor your class' curriculum around your students in order for them to get the most out of their education.</p>
+							<img src="Assets/PROGRESS.png" id="progressCoin"/>
+							<br />
+							<br />
+							<br />
+							<h2 class="myFontClass">Going beyond Video Games</h2>
+							<p>Go beyond the game with custom classroom group activities in line with the plot and activities of the game. Extension activities include group discussions, team challenges and group games that facilitate social and cognitive reasoning skills among the students. Group Activity topcis range from discussions on diversity to group social teambuilding exercises based off of accomplishments from the game.</p>
+							<br />
+							<br />
+							<br />
+							<h2 class="myFontClass">And the best part... it's free!</h2>
+							<p>The first 5 levels of <i>Wisdom Warriors</i> will always be free for use by individual students and families as well as individual classes at both Public and Private Elementary Schools. For more levels and custom integration into your school's technology infrastructure, contact info@wisdom-warrior.com</p>
+							<br />
+							<br />
+							</div>
+						
+	
+							
+							<img src="Assets/HorizontalRule.png" class="hr"/>
+							<br />
+							<br />
+							<br />
+							<h2 class="myFontClass">Contact Us</h2>
+							<br />
+							<p>For Business Inquiries and other General Inquiries, email us at info@wisdom-warrior.com</p>
+							<br />
+							<p>To contact James Weichert directly, email james@wisdom-warrior.com</p>
+							<br />
+							<p>For Technical Support and Troubleshooting, email us at help@wisdom-warrior.com</p>
+							<br />
+							<!--<table class="buttonTable" id="threeButtonTable">
+								<thead>
+									<tr>
+										<td>
+											<a href="pages/howToPlay.html"><img src="Assets/HowToPlayButton.png" class="button"/></a>
+										</td>
+										<td>
+											<a href="pages/contact.html"><img src="Assets/ContactMeButton.png" class="button"/></a>
+										</td>
+										<td>
+											<a href="pages/personalProject.html"><img src="Assets/PersonalProjectButton.png" class="button"/></a>
+										</td>
+									</tr>
+								</thead>
+							</table>-->
+				</div>
+				</div>
+			<div id="LogoBanner">
+							<img src="Assets/WebsiteBanner1.png" alt="Logo Banner">
+			</div>
+			<div class="push"></div>
+			</div>
+			<div id="footer">
+							<p class="myFontClass">Wisdom Warriors</p>
+							<p>Concept and Video Game by James Weichert</p>
+					
+							<p>info@wisdom-warrior.com</p>
+							<br />
+							<p>Copyright &copy; 2017</p>
+				</div>
+			</div>
+			</div>
+
+		</div>
+</div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var winheight = $( window ).height();
+		var winwidth = $( window ).width();
+		console.log(winheight);
+		console.log(winwidth);
+
+			if (winwidth/winheight <= 1.96938 && winwidth/winheight > 1.74387){
+					$("#titleimage").css('margin-bottom', '-258vh');
+					$("#Castle").css('margin-top', '-30vh');
+			}
+			else if (winwidth/winheight <= 1.74387 && winwidth/winheight > 1.53469){
+					$("#titleimage").css('margin-bottom', '-244vh');
+					$("#Castle").css('margin-top', '-24vh');
+			}
+			else if (winwidth/winheight <= 1.53469 && winwidth/winheight > 1.34693){
+					$("#titleimage").css('margin-bottom', '-232vh');
+					$("#Castle").css('margin-top', '-17vh');
+			}
+			else if (winwidth/winheight <= 1.34693 && winwidth/winheight > 1.19081){
+					$("#titleimage").css('margin-bottom', '-222vh');
+					$("#Castle").css('margin-top', '-13vh');
+			}
+			else if (winwidth/winheight <= 1.19081 && winwidth/winheight >= 1.05510){
+					$("#titleimage").css('margin-bottom', '-213vh');
+					$("#Castle").css('margin-top', '-8vh');
+			}
+			else if (winwidth/winheight < 1.05510){
+				alert("Oh No! Please place your device in Landscape mode!");
+			}
+			});
+</script>
+</body>
+</html>
