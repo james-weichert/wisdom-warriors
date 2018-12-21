@@ -1,0 +1,84 @@
+body {
+	font-family: "tahoma", sans-serif;
+
+    max-width: 100%;
+    overflow-x: hidden;
+
+    background-color: #64D6DF;
+
+}
+#footer {
+	text-align: center;
+	background-color: #0B6E9E;
+	color: #EEE;
+
+	padding-top: 4vh;
+	padding-bottom: 4vh;
+
+	margin-left: -5%;
+	margin-right: -5%;
+
+}
+#footer a {
+	padding-right: 3vw;
+	padding-left: 3vw;
+
+	color: #EEE;
+	text-decoration: none;
+}
+#footer a:hover {
+	color: #FFF;
+}
+#titleImages img {
+	width: 105vw;
+
+	margin-left: -2vw;
+}
+#titleImageOne {
+	position: absolute;
+	margin-top: -15vw;
+}
+#titleImageTwo  {
+	position: absolute;
+	margin-top: -16.1vw; 
+}
+#titleImageThree  {
+	margin-top: -15vw; 
+
+}
+#titleImageFour  {
+	position: absolute;
+	margin-top: -79vw; 
+
+	
+
+}
+#titleImageFive  {
+	width: 105vw;
+
+	margin-left: -4vw;
+
+	position: fixed;
+	bottom: 0;
+
+
+}
+.textThingy {
+	text-align: center;
+
+	padding-top: 8vh;
+	padding-bottom: 4vh;
+
+	margin-left: -5%;
+	margin-right: -5%;
+
+	margin-top: -5vw;
+
+	background-color: #EEE;
+	color: #0B6E9E;
+}
+#LogoBanner img {
+	width: 105vw;
+
+	margin-left: -2vw;
+}
