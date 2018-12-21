@@ -1,0 +1,48 @@
+<!Doctype html>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		Animation Test
+	</title>
+</head>
+<body>
+<style type="text/css">
+	/*
+ * Animation configurations ( duration and fill mode )
+*/
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+/*
+ * Pulse animation
+*/
+@-webkit-keyframes pulse {
+    0% { -webkit-transform: scale(1); }
+    50% { -webkit-transform: scale(1.1); }
+    100% { -webkit-transform: scale(1); }
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+.pulse {
+    -webkit-animation-name: pulse;
+    animation-name: pulse;
+}
+#example {
+	margin-left: 50%;
+	margin-right: 50%
+}
+</style>
+
+<div id="example" class="animated pulse"><h1>Hello</h1></div>
+
+</body>
+</html>
